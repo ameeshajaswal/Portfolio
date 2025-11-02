@@ -1,32 +1,46 @@
 {
   "name": "my-app",
-  "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "Fullstack app with Vite frontend and Express backend",
+  "homepage": "https://github.com/ameeshajaswal/Portfolio#readme",
+  "bugs": {
+    "url": "https://github.com/ameeshajaswal/Portfolio/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ameeshajaswal/Portfolio.git"
+  },
+  "license": "ISC",
+  "author": "Ameesha",
   "type": "module",
+  "main": "Server/server.js",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
+    "dev:client": "cd Client && vite",
+    "dev:server": "cd Server && npx nodemon --exec npx babel-node server.js",
+    "start": "node Server/server.js",
+    "build": "cd Client && vite build",
+    "preview": "cd Client && vite preview"
   },
   "dependencies": {
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
-    "react-icons": "^5.5.0",
-    "react-router-dom": "^7.8.2"
+    "bcryptjs": "^3.0.2",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^4.21.2",
+    "helmet": "^7.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "lodash": "^4.17.21",
+    "mongoose": "^8.19.1"
   },
   "devDependencies": {
-    "@eslint/js": "^9.33.0",
-    "@types/react": "^19.1.10",
-    "@types/react-dom": "^19.1.7",
-    "@vitejs/plugin-react": "^5.0.0",
-    "autoprefixer": "^10.4.21",
-    "eslint": "^9.33.0",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.20",
-    "globals": "^16.3.0",
-    "postcss": "^8.5.6",
-    "tailwindcss": "^3.4.17",
-    "vite": "^7.1.2"
+    "@babel/core": "^7.28.4",
+    "@babel/node": "^7.28.0",
+    "@babel/preset-env": "^7.28.3",
+    "babel-loader": "^10.0.0",
+    "concurrently": "^9.1.0",
+    "nodemon": "^3.1.10",
+    "vite": "^5.4.0"
   }
 }
