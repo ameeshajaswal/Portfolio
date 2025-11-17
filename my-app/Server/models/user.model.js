@@ -14,6 +14,11 @@ const UserSchema = new mongoose.Schema({
     match: [/.+\@.+\..+/, "Please fill a valid email address"],
     required: "Email is required",
   },
+  role: {
+    type: String,
+    enum: ["user", "admin"],
+    default: "user"
+  },
   created: {
     type: Date,
     default: Date.now,
@@ -30,8 +35,8 @@ const UserSchema = new mongoose.Schema({
 UserSchema.virtual("password")
   .set(function (password) {
     this._password = password;
-    this.salt = this.makeSalt(); // Generate salt
-    this.hashed_password = this.encryptPassword(password); // Encrypt password
+    this.salt = this.makeSalt();
+    this.hashed_password = this.encryptPassword(password);
   })
   .get(function () {
     return this._password;
