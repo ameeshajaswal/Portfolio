@@ -1,8 +1,8 @@
-# Update netlify.toml in my-app folder
-[build]
-  base = "client"  # ADD THIS LINE!
-  command = "cd client && npm run build"
-  publish = "client/dist"
+# Overwrite the netlify.toml file with the corrected version
+echo '[build]
+  base = "Client"
+  command = "npm run build"
+  publish = "dist"
 
 [[redirects]]
   from = "/*"
@@ -10,4 +10,7 @@
   status = 200
 
 [build.environment]
-  NODE_VERSION = "18"
+  NODE_VERSION = "18"' > netlify.toml
+
+# Verify the change
+Get-Content netlify.toml
