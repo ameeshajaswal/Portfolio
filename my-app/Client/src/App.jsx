@@ -13,15 +13,10 @@ import SignUp from './pages/SignUp';
 import UserProfile from './pages/UserProfile';
 import Education from './pages/Education';
 
-// Add basename for GitHub Pages deployment
-// When running locally, basename will be '/'
-// When deployed to GitHub Pages, basename will be '/Portfolio'
-const basename = process.env.NODE_ENV === 'production' ? '/Portfolio' : '/';
-
 function App() {
   return (
     <AuthProvider>
-      <Router basename={basename}>
+      <Router>
         <div className="flex flex-col min-h-screen">
           <Navbar />
           <main className="flex-grow">
