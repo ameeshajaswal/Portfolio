@@ -38,7 +38,6 @@ export default function Navbar() {
         >
           Projects
         </Link>
-        {/* Removed Education link */}
         <Link
           to="/services"
           className="text-purple-500 hover:text-purple-700 transition-colors duration-300 font-medium px-3 py-2 rounded-md hover:bg-purple-100"
@@ -52,8 +51,8 @@ export default function Navbar() {
           Contact
         </Link>
         <Link
-         to="/education"
-         className="text-blue-500 hover:text-blue-700 transition-colors duration-300 font-medium px-3 py-2 rounded-md hover:bg-blue-100"
+          to="/education"
+          className="text-blue-500 hover:text-blue-700 transition-colors duration-300 font-medium px-3 py-2 rounded-md hover:bg-blue-100"
         >
           Education
         </Link>
